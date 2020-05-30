@@ -13,7 +13,7 @@ for file in brstm_list:
   print('Invalid file.  ')
   quit()
  brstm_n.seek(0)
- brstm_f = open(f'{file.rstrip("_n.brstm")}_f.brstm','wb')
+ brstm_f = open(f'{file.rstrip("_n.brstm").rstrip("_N.brstm")}_f.brstm','wb')
  brstm_f.write(brstm_n.read(0x64))
  rate_old = int.from_bytes(brstm_n.read(2),byteorder=endianness)
  rate_new = int(rate_old * RATE_MULTIPLIER)
