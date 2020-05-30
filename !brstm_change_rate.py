@@ -21,4 +21,4 @@ for i,file in enumerate(brstm_list,1):
  brstm_f.write(brstm_n.read())
  brstm_n.close()
  brstm_f.close()
- print(f'{i}: {file}: endianness {endianness}, original rate {rate_old}Hz, new rate {rate_new}Hz. ')
+ print(f'{str(i).zfill(3)}: {file.rjust(32)}: endianness {endianness}, original rate {rate_old}Hz, new rate {rate_new}Hz. ')
