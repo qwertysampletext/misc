@@ -3,7 +3,7 @@ from glob import glob
 RATE_MULTIPLIER = float(input('Input rate multiplier (recommended value 1.2): '))
 brstm_list = glob('*_n.brstm')
 
-for file in brstm_list:
+for i,file in enumerate(brstm_list,1):
  brstm_n = open(file,'rb')
  if brstm_n.read(6) == b'RSTM\xfe\xff':
   endianness = 'big'
@@ -21,4 +21,4 @@ for file in brstm_list:
  brstm_f.write(brstm_n.read())
  brstm_n.close()
  brstm_f.close()
- print(f'{file}: endianness {endianness}, original rate {rate_old}Hz, new rate {rate_new}Hz. ')
+ print(f'{i}: {file}: endianness {endianness}, original rate {rate_old}Hz, new rate {rate_new}Hz. ')
