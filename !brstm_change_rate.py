@@ -1,7 +1,7 @@
 from glob import glob
 
-RATE_MULTIPLIER = float(input('Input rate multiplier (recommended value 1.2): '))
-brstm_list = glob('*_n.brstm')
+RATE_MULTIPLIER = float(input('Input rate multiplier (recommended value 1.06): '))
+brstm_list = list(dict.fromkeys(glob('*_n.brstm') + glob('*_N.brstm')))
 
 for i,file in enumerate(brstm_list,1):
  brstm_n = open(file,'rb')
