@@ -29,15 +29,15 @@ MODE = input('Select mode: ')
 while MODE not in ['fw','nc','ns','re','re_',]:
  MODE = input('Invalid mode. Select mode: ')
 if MODE == 'fw':
- OUT = char_02.fullwidth(TXT_IN,FULLWIDTH_SP_COUNT)
+ OUT = char_test_02.fullwidth(TXT_IN,FULLWIDTH_SP_COUNT)
 elif MODE == 'nc':
- OUT = char_02.negative_circled(TXT_IN)
+ OUT = char_test_02.negative_circled(TXT_IN)
 elif MODE == 'ns':
- OUT = char_02.negative_squared(TXT_IN)
+ OUT = char_test_02.negative_squared(TXT_IN)
 elif MODE == 're':
- OUT = char_02.regional_indicator(TXT_IN)
+ OUT = char_test_02.regional_indicator(TXT_IN)
 elif MODE == 're_':
- OUT = char_02.negative_squared(TXT_IN,chr(0x200c))
+ OUT = char_test_02.regional_indicator(TXT_IN,chr(0x200c))
 
 if CLIPBOARD_ACCESS:
  clipboard.copy(OUT)
