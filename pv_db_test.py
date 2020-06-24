@@ -10,8 +10,6 @@ for i in pv_db_txt.split('\n'):
   if not pv in pv_db: pv_db[pv] = {}
   pv_db[pv][info] = value
 
-tags = ['date','song_file_name','song_name_en','song_name']
-
 for i in pv_db:
  pv = pv_db[i]
  data = dict()
